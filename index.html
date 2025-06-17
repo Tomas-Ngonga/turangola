@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<title>Guia Turístico</title>-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header com Login/Cadastro -->
+    <header>
+        <nav class="navbar">
+           
+            <div class="logo">
+                <a href="index.html">  <img src="icon/guia.png"  class="ico"><h1>Guia Turístico</h1></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="tab-btn active" data-tab="pontos"><i id="ico2" class="fa-solid fa-mountain-sun"></i>Pontos Turísticos</a></li>
+                <li><a href="#" class="tab-btn" data-tab="hoteis"><i  id="ico2" class="fa-solid fa-bed"></i>Hotéis</a></li>
+                <li><a href="#" class="tab-btn" data-tab="restaurantes"><i id="ico2"  class="fa-solid fa-utensils"></i>Restaurantes</a></li>
+                <li><a href="#" class="tab-btn" data-tab="transporte"><i id="ico2" class="fa-solid fa-car"></i>Transporte</a></li>
+                <li><a href="#" class="tab-btn" data-tab="mapa"><i id="ico2" class="fa-solid fa-map-location"></i>Mapa</a></li>
+            </ul>
+
+            <div class="auth-buttons">
+                <button id="loginBtn" class="btn-login">Entrar</button>
+            </div>
+            
+        </nav>
+    </header>
+    <br>
+    <!-- Barra de Pesquisa -->
+    <!-- Carrossel de Destaques -->
+    <div class="carousel">
+        <div class="carousel-inner">
+            <!-- As imagens serão carregadas dinamicamente via JavaScript -->
+        </div>
+        <button class="carousel-prev">&lt;</button>
+        <button class="carousel-next">&gt;</button>
+        <div class="carousel-indicators"></div>
+    </div>
+
+    <!-- Conteúdo das Abas -->
+    <div class="tab-content">
+        <!-- Hotéis -->
+        <div id="hoteis" class="tab-pane">
+            <div class="grid-container">
+                <!-- Cards de hotéis serão inseridos aqui via JavaScript -->
+            </div>
+        </div>
+
+        <!-- Pontos Turísticos -->
+        <div id="pontos" class="tab-pane active">
+            <div class="grid-container">
+                <!-- Cards de pontos turísticos serão inseridos aqui via JavaScript -->
+            </div>
+        </div>
+
+        <!-- Restaurantes -->
+        <div id="restaurantes" class="tab-pane">
+            <div class="grid-container">
+                <!-- Cards de restaurantes serão inseridos aqui via JavaScript -->
+            </div>
+        </div>
+
+        <!-- Transporte -->
+        <div id="transporte" class="tab-pane">
+            <div class="transport-info">
+                <div class="form-group">
+                    <label for="pagar">Tipo de Transporte:</label>
+                    <select id="pagar" required>
+                        <option value="1">INTER-PROVICIAL</option>
+                        <option value="2">AFRO TÁXI</option>
+                        <option value="3">HEETCH</option>
+                    </select>
+                </div>
+            <div class="grid-container">
+                <!-- Informações de transporte serão inseridas aqui -->
+            </div>
+            </div>
+        </div>
+
+        <!-- Mapa -->
+        <div id="mapa" class="tab-pane">
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+                <button id="registerBtn" class="btn-register">Cadastro</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Cadastro -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Cadastro</h2>
+            <form id="registerForm">
+                <input type="text" placeholder="Nome" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Senha" required>
+                <input type="password" placeholder="Confirmar Senha" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="funct.js"></script> 
+    <script src="carousel.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4U52fyNWT7HEh1k-knE8ShEkNL9oy4M8&libraries=maps,marker&v=beta&callback=initMap" defer></script>
+    
+    <!--rodape-footer-->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Sobre Nós</h3>
+                <p>Seu guia turístico completo para explorar as melhores experiências de viagem em Angola.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#">Pontos Turísticos</a></li>
+                    <li><a href="#">Hotéis</a></li>
+                    <li><a href="#">Restaurantes</a></li>
+                    <li><a href="#">Transporte</a></li>
+                    <li><a href="#">Mapa</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact">
+                <h3>Contatos</h3>
+                <p><i class="fas fa-envelope"></i> GTangola@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +244 123 456 789</p>
+                <p><i class="fas fa-map-marker-alt"></i> Luanda, Angola</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Guia Turístico Angolano. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
